@@ -1,0 +1,11 @@
+{
+    "plugins" : [
+        "anchors",
+        "github"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/projecteru2"
+        }
+    }
+}
