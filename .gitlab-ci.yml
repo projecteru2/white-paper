@@ -1,0 +1,9 @@
+image: "hub.ricebook.net/base/centos:F2E-2017.03.31"
+pages:
+  stage: deploy
+  script:
+    - "npm install -g gitbook-cli"
+    - "gitbook build . public"
+  artifacts:
+    paths:
+      - public
