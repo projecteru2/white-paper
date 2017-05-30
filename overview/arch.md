@@ -48,7 +48,7 @@
 
 - [spike](https://github.com/projecteru2/spike)
 - [elb3](https://github.com/projecteru2/elb3)
-- [footstone](https://github.com/project2/footstone)
+- [footstone](https://github.com/projecteru2/footstone)
 
 ### 第三方支持
 
