@@ -55,8 +55,8 @@
 ### 可选的集群体系化的备份和恢复 ( moosefs )
 
 - 采用开源的 [moosefs](https://github.com/moosefs/moosefs) 作为分布式存储后端
-- 支援在 app.yaml 中显式声明 volume 备份需求和策略，以及设定备份策略
-- 支援指定备份恢复
+- 支持在 app.yaml 中显式声明 volume 备份需求和策略，以及设定备份策略
+- 支持指定备份恢复
 
 ### 可选的集群日志查询组件 （ kafka + elasticsearch + kibana ）
 
