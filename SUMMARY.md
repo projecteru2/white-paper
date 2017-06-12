@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [RoadMap](roadmap.md)
+* [Brief](brief.md)
 * [Overview](overview/README.md)
     * [目标](overview/resolution.md)
     * [特性](overview/features.md)
