@@ -10,6 +10,7 @@
 - 使用开源的 [calico](https://github.com/projectcalico/calico) 项目构建 [SDN 网络](https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%AE%9A%E7%BE%A9%E7%B6%B2%E8%B7%AF)
 - 高效率的应用内网络互通
 - Pod 间网络默认隔离
+- 支持多种 SDN 实现，如大二层的 [MacVLAN](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/) 技术
 
 ### 基于容器技术支持多样化的技术栈
 
