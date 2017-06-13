@@ -14,7 +14,9 @@ EruCtl 类似于 [CalicoCtl](https://github.com/projectcalico/calicoctl) 用于�
     * Mount unix:///var/run/docker.sock 到容器中，Agent 需要通过这个来监听容器动态以及获取日志流。
 
 2. Pod 管理。
+
 3. Network 管理。
+
 4. 在特定机器上部署或更新 Core。Core 的自举和 RPM 部署不同的在于，Core 会是一个 Raw type 的 Eru App。
 
 #### 部署方式
