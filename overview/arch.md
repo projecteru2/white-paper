@@ -6,7 +6,7 @@
 
 ![](img/core.png)
 
-物理层面来说，用户操作的 UI 和应用抽象都实现在 [citadel](https://github.com/projecteru2/citadel) 这个项目之中。它使用 gRPC 与 Core 交互，从而把业务的一个个 App 部署到 Eru 的集群之中。
+物理层面来说，用户操作的 UI 和应用抽象都实现在 [citadel](https://github.com/projecteru2/citadel) 这个项目之中。它使用 gRPC 与 core 交互，从而把业务的一个个 App 部署到 Eru 的集群之中。
 
 往下则是 Eru 核心组件 [core](https://github.com/projecteru2/core)。core 是无状态的编排调度核心，可以依据集群大小进行横向扩展。其职责是将 citadel 的容器操作进行编排并且按照一定的资源维度调度通过一定的算法计算出资源，编排好之后部署到到一个 Pod 中对应的一个或者多个 Nodes 上。core 之间的共享数据存储在 etcd 之中。
 
@@ -44,7 +44,7 @@
 镜像构建完成后，应用开发者就可以选定入口，提出资源邀约，在 citadel 上进行部署了。如果有对外暴露需要也仅需增加 elb 的描述段，elb 会在每次同一 entrypoint 的容器上/下线的时候进行动态更新路由表，实现 zero downtime 的流量切换。
 
 
-### 组件
+### 其他组件
 
 - [spike](https://github.com/projecteru2/spike)
 - [elb3](https://github.com/projecteru2/elb3)

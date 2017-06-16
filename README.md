@@ -7,7 +7,7 @@ Eru is a docker container orchestration platform.
 
 作为 Eru 容器调度编排系统白皮书，会对 Eru 的架构/演进历史/安装部署/使用/参与开发等方方面面给出充分的说明。
 
-目前最新版本为 Eru version 2.0.0 Aka Eru2。
+目前最新版本为 Eru version 2.0.0 a.k.a Eru2。
 
 ## 设计目标
 

@@ -32,4 +32,4 @@
   - 基于 [Openresty](https://openresty.org/en/)
   - 本身也是 Eru 应用之一
   - 通过指定的 Redis 进行发布工作
-  - 应用上下线过程中保证流量平稳
+  - 应用上下线过程中保证流量平稳切换
