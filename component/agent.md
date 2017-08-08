@@ -6,7 +6,9 @@ Agent 的设计第一目标是尽可能的减少对 Node 的影响。因为每�
 
 #### 主要功能
 
-1. 容器检查，基于 Docker 自身的 event listener API。在 Agent 激活的时候会根据 etcd 中记录的数据进行一次全量匹配，把 Offline 的标记下线。运行期中也会根据 API 返回数据更新 etcd 中容器状态属性。
+1. 容器检查，基于 Docker 自身的 event listener API。
+
+   * 在 Agent 激活的时候会根据 etcd 中记录的数据进行一次全量匹配，把 Offline 的标记下线。运行期中也会根据 API 返回数据更新 etcd 中容器状态属性。
 
 2. 容器 Metrics 收集，基于 CGroups。在这个实现里面我们并未采用 Docker 自身的 API，原因有以下这些。
 

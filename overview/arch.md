@@ -46,8 +46,9 @@
 
 ### 其他组件
 
-- [spike](https://github.com/projecteru2/spike)
 - [elb3](https://github.com/projecteru2/elb3)
+- [lambda](https://github.com/projecteru2/lambda)
+- [spike](https://github.com/projecteru2/spike)
 - [footstone](https://github.com/projecteru2/footstone)
 
 ### 第三方支持

@@ -13,5 +13,6 @@
     * [Core](component/core.md)
     * [Agent](component/agent.md)
     * [ELB](component/elb.md)
+    * [Lambda](component/lambda.md)
     * [Citadel](component/citadel.md)
 * [RoadMap](roadmap.md)
