@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Brief](brief.md)
+* [Projects](projects.md)
 * [Overview](overview/README.md)
     * [目标](overview/resolution.md)
     * [特性](overview/features.md)
