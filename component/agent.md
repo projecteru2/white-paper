@@ -27,4 +27,3 @@ Agent 的设计第一目标是尽可能的减少对 Node 的影响。因为每�
 #### 部署方式
 
 1. CentOS 7 上我们提供了 RPM 打包方式，可以通过 RPM 部署。
-2. 通过 [EruCtl](https://github.com/projecteru2/eructl) 进行容器化部署。
