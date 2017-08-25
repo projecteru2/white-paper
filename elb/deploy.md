@@ -12,4 +12,4 @@
 
 * 运行: `nginx -p /path/to/server -c /path/to/ELB/conf/release.conf`
 
-* 安装可以参考 [alpine-openresty](http://gitlab.ricebook.net/footstone/alpine-openresty) , 运行可以参考 ELB 中的 `start.sh`。
+* 安装可以参考源码中的 dockerized 下 Dockerfile 的实现, 运行可以参考 ELB 中的 `start.sh`。
