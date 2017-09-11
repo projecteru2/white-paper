@@ -4,25 +4,21 @@
 
 ## 基础组件
 
-> 安装在宿主机或者独立部署运行的最基础的组件
-
 * [core](https://github.com/projecteru2/core)
 * [agent](https://github.com/projecteru2/agent)
 * [lambda](https://github.com/projecteru2/lambda)
 
-## 服务发现和组件状态
-
-> Eru 工具类组件
+## 服务发现
 
 * [elb](https://github.com/projecteru2/elb)
-* [stats](https://github.com/projecteru2/stats)
-* [mimiron](https://github.com/projecteru2/mimiron)
 
 ## Workflow 和内置应用
 
 * [citadel](https://github.com/projecteru2/citadel)
-* [suramar](https://github.com/projecteru2/suramar)
+* [stats](https://github.com/projecteru2/stats)
+* mimiron
+* suramar
 
-## 其他可选组件
+## Ops 工具
 
-* [docker-mfs-driver](https://github.com/projecteru2/docker-mfs-driver)
+> 整理中

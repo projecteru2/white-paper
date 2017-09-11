@@ -48,7 +48,6 @@
 
 - [elb](https://github.com/projecteru2/elb)
 - [lambda](https://github.com/projecteru2/lambda)
-- [spike](https://github.com/projecteru2/spike)
 - [footstone](https://github.com/projecteru2/footstone)
 
 ### 第三方支持

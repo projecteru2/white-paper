@@ -24,4 +24,5 @@ Core 的设计第一目标是高效调度。对于核心调度器而言，现有
 
 ##### 部署方式
 
-1. CentOS 7 上我们提供了 RPM 打包方式，可以通过 RPM 部署。
+1. CentOS 7 上我们提供了 RPM 打包方式，可以通过 RPM 部署，具体可以参考[这里](https://github.com/projecteru2/core/blob/master/make-rpm)。
+2. 我们也提供了 Docker 化的 [Core](https://hub.docker.com/r/projecteru2/core)
