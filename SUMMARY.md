@@ -20,7 +20,9 @@
     * [Zone](conception/zone.md)
     * [Pod](conception/pod.md)
     * [Node](conception/node.md)
+* [Benchmark](benchmark.md)
 * QuickStart
+    * Prepare
     * Install
     * Make a app
     * Deploy it
