@@ -26,6 +26,7 @@
     * Install
     * Make a app
     * Deploy it
+* [FAQ](FAQ.md)
 * [Core](https://github.com/projecteru2/core/blob/master/README.md)
 * [Agent](https://github.com/projecteru2/agent/blob/master/README.md)
 * [Lambda](https://github.com/projecteru2/lambda/blob/master/README.md)
