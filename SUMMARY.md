@@ -21,8 +21,8 @@
     * [Pod](conception/pod.md)
     * [Node](conception/node.md)
 * [Benchmark](benchmark.md)
-* QuickStart
-    * Prepare
+* [QuickStart](quickstart/README.md)
+    * [Prepare](quickstart/prepare.md)
     * Install
     * Make a app
     * Deploy it
