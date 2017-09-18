@@ -23,7 +23,7 @@
 * [Benchmark](benchmark.md)
 * [QuickStart](quickstart/README.md)
     * [Prepare](quickstart/prepare.md)
-    * Install
+    * [Install](quickstart/install.md)
     * Make a app
     * Deploy it
 * [FAQ](FAQ.md)
