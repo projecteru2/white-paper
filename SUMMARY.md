@@ -24,6 +24,7 @@
 * [QuickStart](quickstart/README.md)
     * [Prepare](quickstart/prepare.md)
     * [Install](quickstart/install.md)
+    * [Example](quickstart/example.md)
     * Make a app
     * Deploy it
 * [FAQ](FAQ.md)
