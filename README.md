@@ -24,4 +24,4 @@ Eru is a docker container orchestration platform.
 原则上来说 Eru 只是将 Docker 作为容器最小单元引擎，并不做过强的耦合和依赖。通过架构层面上的设计和优化，使得 Eru 可以支持上千甚至上万台物理机器集群，满足小型到大型公司平台层面的调度编排需求。
 
 ## License
-Eru White Paper is released under the [MIT license](https://github.com/projecteru2/white-paper/blob/master/LICENSE).
+Eru is released under the [MIT license](https://github.com/projecteru2/white-paper/blob/master/LICENSE).
