@@ -12,7 +12,6 @@
 * [Component](component/README.md)
     * [Core](component/core.md)
     * [Agent](component/agent.md)
-    * [ELB](component/elb.md)
     * [Lambda](component/lambda.md)
     * [Citadel](component/citadel.md)
 * [Conception](conception/README.md)
@@ -32,5 +31,4 @@
 * [Agent](https://github.com/projecteru2/agent/blob/master/README.md)
 * [Lambda](https://github.com/projecteru2/lambda/blob/master/README.md)
 * [Citadel](https://github.com/projecteru2/citadel/blob/master/README.md)
-* [ELB](https://github.com/projecteru2/elb/blob/master/README.md)
 * [RoadMap](roadmap.md)

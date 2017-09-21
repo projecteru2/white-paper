@@ -29,7 +29,7 @@
 
 逻辑层面上，我们将每个业务逻辑都抽象成一个个 App，由 citadel 来管理，并与 gitlab/github 进行了整合，允许进行版本的跟踪。同时，操作 App 的一切工具如日志，如流量管理均在 citadel 上进行。总的来说一切 App 生命周期都由 citadel 管控着。
 
-流量流动上面，可以看到外部世界与 App 的交互均需要通过 [elb](https://github.com/projecteru2/elb)，elb 负责所有 7 层 App 的流量导入，并可以通过不同的 version/entrypoint/url 的组合将流量分流，打入到同一个 App 的某一组不同入口的容器里面。
+流量流动上面，可以看到外部世界与 App 的交互均需要通过 elb (目前这个架构我们在考虑替换中)，elb 负责所有 7 层 App 的流量导入，并可以通过不同的 version/entrypoint/url 的组合将流量分流，打入到同一个 App 的某一组不同入口的容器里面。
 
 ### App
 
@@ -46,7 +46,6 @@
 
 ### 其他组件
 
-- [elb](https://github.com/projecteru2/elb)
 - [lambda](https://github.com/projecteru2/lambda)
 - [footstone](https://github.com/projecteru2/footstone)
 
