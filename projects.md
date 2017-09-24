@@ -8,6 +8,10 @@
 * [agent](https://github.com/projecteru2/agent)
 * [lambda](https://github.com/projecteru2/lambda)
 
+## 服务发现
+
+* [elb](https://github.com/projecteru2/elb)
+
 ## Workflow 和内置应用
 
 * [citadel](https://github.com/projecteru2/citadel)
