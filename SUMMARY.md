@@ -25,8 +25,10 @@
     * [Prepare](quickstart/prepare.md)
     * [Install](quickstart/install.md)
     * [Example](quickstart/example.md)
+    * Use cli
+    * Deploy raw image
     * Make a app
-    * Deploy it
+    * Deploy by citadel/cli
 * [Core](https://github.com/projecteru2/core/blob/master/README.md)
 * [Agent](https://github.com/projecteru2/agent/blob/master/README.md)
 * [Lambda](https://github.com/projecteru2/lambda/blob/master/README.md)
