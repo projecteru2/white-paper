@@ -36,8 +36,8 @@
 
 #### 部署方式
 
-采用容器化部署，ELB 本身就是就是一类特殊的普通 Eru App。
+采用容器化部署，ELB 本身可以通过 [Erucli](https://github.com/projecteru2/cli) 通过 Raw 的方式部署，也可以直接通过[镜像](https://hub.docker.com/r/projecteru2/elb/) 运行。
 
 #### 开发历史
 
-ELB 经历了若干次改动，当时我写了第一版（代号 洪武），随后写了第二版（代号 朱标 但并没有上线），之后是六子写了基于 path 分流的 pathlb（代号 建文），现在是第三版（代号 永乐），增加动态复杂多级分流功能功能。
+[这里](https://github.com/projecteru2/elb/blob/master/CHANGELOG.md) 记录了 ELB 的详细开发历史，ELB 的项目代号均采用明朝编制。

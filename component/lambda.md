@@ -15,3 +15,4 @@
 #### 使用方式
 
 CentOS 7 上我们提供了 RPM 打包方式，可以通过 RPM 部署。
+在其他系统上也可以通过 lambda 的[镜像](https://hub.docker.com/r/projecteru2/lambda/)来执行 lambda 任务。
