@@ -6,7 +6,7 @@
 
 * [core](https://github.com/projecteru2/core)
 * [agent](https://github.com/projecteru2/agent)
-* [lambda](https://github.com/projecteru2/lambda)
+* [cli](https://github.com/projecteru2/cli)
 
 ## 服务发现
 
@@ -15,7 +15,6 @@
 ## Workflow 和内置应用
 
 * [citadel](https://github.com/projecteru2/citadel)
-* [stats](https://github.com/projecteru2/stats)
 * mimiron
 * suramar
 

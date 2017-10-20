@@ -2,13 +2,13 @@
 
 #### 设计思想
 
-Agent 的设计第一目标是尽可能的减少对 Node 的影响。因为每个 Agent 都跑在 Node 上面，我们假定前提是资源是线性的。如果 Agent 消耗过多资源，那么就会导致 Node 上容器消耗资源的不确定性，进而影响整个 Node 资源的估算。
+Agent 的设计第一目标是尽可能的减少对 Node 的影响。因为每个 Agent 都跑在 Node 上面，我们假定前提是资源是线性的。如果 Agent 消耗过多资源，那么就会导致 Node 上容器消耗资源的不确定性，进而影响整个 Node 资源的估算。在这一版本的设计中，agent 可以通过 Eru 自举，资源监控也可以复用其本身的监控路径从而更加方便。
 
 #### 主要功能
 
 1. 容器检查，基于 Docker 自身的 event listener API。
 
-   * 在 Agent 激活的时候会根据 etcd 中记录的数据进行一次全量匹配，把 Offline 的标记下线。运行期中也会根据 API 返回数据更新 etcd 中容器状态属性。
+   * 在 Agent 激活的时候会根据已有的容器标记进行一次全量匹配，把 Offline 的在 Core 中的数据标记下线。运行期中也会根据 API 返回数据更新 Core 中容器状态属性。
 
 2. 容器 Metrics 收集，基于 CGroups。在这个实现里面我们并未采用 Docker 自身的 API，原因有以下这些。
 
@@ -20,7 +20,7 @@ Agent 的设计第一目标是尽可能的减少对 Node 的影响。因为每�
 3. 日志转发，基于 attach API。我们认为传统 docker log API 先天会有几个限制。
 
     * 文件型 API 导致 Node 磁盘空间和 IO 的负载不可控，如 json-file 和 journal。
-    * 远端型 API 信息不够丰富，比如 syslog 等，缺乏特定的元数据支持。在远端看到的就是 [containerID][data] 二元结构，然而通过 cid 反查到某个容器对应的 App 等是一件繁琐的事情。假如在远端进行聚合，如果采用这种方式需要将每一条 log 进行匹配，这样对远端的压力也大。
+    * 远端型 API 信息不够丰富，比如 syslog 等，缺乏特定的元数据支持。在远端看到的就是 `[containerID][data]` 二元结构，然而通过 cid 反查到某个容器对应的 App 等是一件繁琐的事情。假如在远端进行聚合，如果采用这种方式需要将每一条 log 进行匹配，这样对远端的压力也大。
 
     因此，我们采用更底层的 attach API，截获容器的 stdout/stderr，再在输出到远端之前把 Eru 所需的元数据聚合到其中，生成一条复杂格式的 log stream 然后才发送到远端。这样远端就只需要聚合处理并不需要做任何复杂逻辑操作了。
     
@@ -28,3 +28,4 @@ Agent 的设计第一目标是尽可能的减少对 Node 的影响。因为每�
 
 1. CentOS 7 上我们提供了 RPM 打包方式，可以通过 RPM 部署。
 2. 同样的我们也提供了 Docker 化的 [Agent](https://hub.docker.com/r/projecteru2/agent/)。
+3. 通过 cli 工具进行自举部署。

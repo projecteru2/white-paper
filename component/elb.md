@@ -36,7 +36,7 @@
 
 #### 部署方式
 
-采用容器化部署，ELB 本身可以通过 [Erucli](https://github.com/projecteru2/cli) 通过 Raw 的方式部署，也可以直接通过[镜像](https://hub.docker.com/r/projecteru2/elb/) 运行。
+采用容器化部署，ELB 本身可以通过 [cli](https://github.com/projecteru2/cli) 通过 Raw 的方式部署，也可以直接通过[镜像](https://hub.docker.com/r/projecteru2/elb/) 运行。
 
 #### 开发历史
 

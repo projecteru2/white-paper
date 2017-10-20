@@ -5,21 +5,29 @@
 - 在现有的应用上只需要增加一个配置文件 app.yaml 即可定义应用在 Eru 集群里的编译和运行
 - 对现有项目 0 侵入
 
+### 调度器中立
+
+- Eru core 层面不限制 workflow 行为，只关心资源和容器编排调度
+- 通过 [cli](https://github.com/projecteru2/cli) 可以使用本地或者远程配置直接通过 Eru 来部署已有的镜像
+- 方便接入上层应用 PaaS 亦或是现有的其他基础设施
+
 ### SDN 网络安全隔离
 
 - 使用开源的 [calico](https://github.com/projectcalico/calico) 项目构建 [SDN 网络](https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%AE%9A%E7%BE%A9%E7%B6%B2%E8%B7%AF)
 - 高效率的应用内网络互通
 - 多租户隔离(依托于 calico 自己的 ACL 由 Ops 层面决定)
+- 支持其他不同的 SDN Driver
 
 ### 基于容器技术支持多样化的技术栈
 
 - 使用开源的 [docker](https://github.com/moby/moby) 项目构建容器云
 - 自动生成 Dockerfile, 支持多步构建部分替代 CI 能力
-- 应用镜像与 SCM 提交历史绑定，方便回滚操作
+- 应用镜像与 SCM 提交历史绑定，方便回滚操作（PaaS 层）
 - 容器技术天然的支持隔离系统和应用的依赖
-- 集群可配置全量缓存最近多个版本的镜像，加速部署回滚等行为
+- 集群可配置全量缓存最近多个版本的镜像，加速部署回滚等行为（PaaS 层）
 - 提供动态运行代码/命令入口 (类似于 [AWS lambda](https://aws.amazon.com/cn/lambda/))
-- 提供无痛升级能力
+- 提供无痛升级能力（PaaS 层）
+- 多区支持（PaaS 层）
 
 ### 应用在线扩容缩容
 

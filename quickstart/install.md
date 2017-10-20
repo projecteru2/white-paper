@@ -13,7 +13,7 @@ Core 的配置可以参考 [core.yaml.sample](https://github.com/projecteru2/cor
 
 ## Agent
 
-同样的，在 CentOS 系统上依然只需要直接安装 RPM 包，对于其他系统而言我们也提供了官方的镜像 [projecteru2/agent](https://hub.docker.com/r/projecteru2/agent/)。
+同样的，在 CentOS 系统上依然只需要直接安装 RPM 包，对于其他系统而言我们也提供了官方的镜像 [projecteru2/agent](https://hub.docker.com/r/projecteru2/agent/)，或者通过 cli 来部署。
 
 #### 配置
 
@@ -21,7 +21,7 @@ Agent 的配置可以参考 [agent.yaml.sample](https://github.com/projecteru2/a
 
 ## Pod
 
-在安装好 Core 和 Agent 之后，集群实际上还是不能启动的，需要先注册 Pod。在注册 Pod 之前我们需要选择使用哪种模型的 Pod，对于 Eru 而言分 CPU 优先（favor CPU）和 MEM 优先（favor MEM）。对于 CPU 优先的 Pod 中每个节点在部署容器的时候均会精确的分配容器所占用 CPU，内存控制交由容器内进程自行控制。对于自带内存控制又对 CPU 性能敏感的应用如 redis 而言，是一种比较好的模式。
+在安装好 Core 之后，集群实际上还是不能启动的，需要先注册 Pod。在注册 Pod 之前我们需要选择使用哪种模型的 Pod，对于 Eru 而言分 CPU 优先（favor CPU）和 MEM 优先（favor MEM）。对于 CPU 优先的 Pod 中每个节点在部署容器的时候均会精确的分配容器所占用 CPU，内存控制交由容器内进程自行控制。对于自带内存控制又对 CPU 性能敏感的应用如 redis 而言，是一种比较好的模式。
 
 内存优先的模型下，Eru 也会从全局的角度分配 CPU 运算量给容器，但要注意的是在机器空闲的时候这个 CPU 运算量是可以保证的，而机器繁忙的时候用户得注意 load 值然后及时的通过 API 来迁移容器。这个模式下内存是强限制，CPU 可以超售。
 

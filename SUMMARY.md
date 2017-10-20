@@ -12,7 +12,7 @@
 * [Component](component/README.md)
     * [Core](component/core.md)
     * [Agent](component/agent.md)
-    * [Lambda](component/lambda.md)
+    * [Cli](component/cli.md)
     * [ELB](component/elb.md)
     * [Citadel](component/citadel.md)
 * [Conception](conception/README.md)
@@ -31,7 +31,7 @@
     * Deploy by citadel/cli
 * [Core](https://github.com/projecteru2/core/blob/master/README.md)
 * [Agent](https://github.com/projecteru2/agent/blob/master/README.md)
-* [Lambda](https://github.com/projecteru2/lambda/blob/master/README.md)
+* [Cli](https://github.com/projecteru2/cli/blob/master/README.md)
 * [Citadel](https://github.com/projecteru2/citadel/blob/master/README.md)
 * [ELB](https://github.com/projecteru2/elb/blob/master/README.md)
 * [History](history.md)

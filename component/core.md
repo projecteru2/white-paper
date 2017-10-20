@@ -6,7 +6,7 @@ Core 的设计第一目标是高效调度。对于核心调度器而言，现有
 
 * [Kubernetes](https://kubernetes.io) 基于乐观锁的实现，采用事物操作保证并行高效的决策方案。这个方案的问题是在规模巨大的集群中，共享状态冲突将会是常态，从而影响调度效率。在最新一版的 k8s 中，已经可以达到千台规模的控制，但对于我们而言，这才是星辰大海的起点而已。
 * [Mesos](http://mesos.apache.org/) 基于悲观锁的实现，采用全局资源协定的模式来分配资源。这里并不讨论资源分配和任务调度两级设计带来的问题，单资源分配来说，悲观锁在横向扩展性上依旧是不足的。比如现有的 Mesos 分配资源时间就很长，隔离性也较差。
-* [Swarm](https://github.com/moby/moby) 基于悲观锁，类似于 Mesos。不过是从 [paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science) ) 转向了 [raft](https://raft.github.io/) 罢了。因此在问题上也是一致的。
+* [Swarm](https://github.com/moby/moby) 基于悲观锁，类似于 Mesos。不过是从 [paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science) ) 转向了 [raft](https://raft.github.io/) 罢了，因此在问题上也是一致的。
 
 那么在设计 Core 的时候，我们的目标是无论集群多大，都应该提供一致性的高效资源分配能力。并且，不希望随着集群大小的增长产生冲突从而降低效率。因此我们是选择了悲观锁作为实现原理。
 
@@ -25,4 +25,5 @@ Core 的设计第一目标是高效调度。对于核心调度器而言，现有
 ##### 部署方式
 
 1. CentOS 7 上我们提供了 RPM 打包方式，可以通过 RPM 部署，具体可以参考[这里](https://github.com/projecteru2/core/blob/master/make-rpm)。
-2. 我们也提供了 Docker 化的 [Core](https://hub.docker.com/r/projecteru2/core)
+2. 我们也提供了 Docker 化的 [Core](https://hub.docker.com/r/projecteru2/core)。
+3. 可以通过 cli 工具使用已有的 core 去部署另外一组 core，完成自举。

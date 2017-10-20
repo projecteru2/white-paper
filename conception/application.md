@@ -10,7 +10,8 @@ Application 在 Eru 中用于描述一个可部署的项目，仅对于 Citadel 
 
 1. Name, 每一个 Eru App 的 Name 都应该是唯一的。
 2. Entrypoints，用于描述代码的入口。App 支持多种入口，每一种入口的日志都会自动的分流到对应远端。
-3. Build，包括 Complex Build，用于描述如何讲项目打包成 Docker 镜像。
-4. Combos, 所需资源描述
+3. Stages/Builds，用于描述如何讲项目打包成 Docker 镜像，也可以用于简单的 CI process。
 
 当然还有其他一些属性，可以参考 [Citadel 的文档](https://github.com/projecteru2/citadel/blob/ce/docs/user-docs/specs.md)。
+
+在 Eru 里面，只有 PaaS 层的 citadel 才有 app 的概念，在 core 中一切都是一个描述文件，具体可以参考 [agent 自举的描述文件](https://github.com/projecteru2/agent/blob/master/app.yaml)。
