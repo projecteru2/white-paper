@@ -21,14 +21,11 @@
     * [Pod](conception/pod.md)
     * [Node](conception/node.md)
 * [Benchmark](benchmark.md)
-* [QuickStart](quickstart/README.md)
+* [Quickstart](quickstart/README.md)
     * [Prepare](quickstart/prepare.md)
     * [Install](quickstart/install.md)
+    * [Guide](quickstart/guide.md)
     * [Example](quickstart/example.md)
-    * Use cli
-    * Deploy raw image
-    * Make a app
-    * Deploy by citadel/cli
 * [Core](https://github.com/projecteru2/core/blob/master/README.md)
 * [Agent](https://github.com/projecteru2/agent/blob/master/README.md)
 * [Cli](https://github.com/projecteru2/cli/blob/master/README.md)
