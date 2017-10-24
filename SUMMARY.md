@@ -24,7 +24,7 @@
 * [Quickstart](quickstart/README.md)
     * [Prepare](quickstart/prepare.md)
     * [Install](quickstart/install.md)
-    * [Guide](quickstart/guide.md)
+    * [Release](quickstart/release.md)
     * [Example](quickstart/example.md)
 * [Core](https://github.com/projecteru2/core/blob/master/README.md)
 * [Agent](https://github.com/projecteru2/agent/blob/master/README.md)
