@@ -55,6 +55,11 @@ entrypoints:
 一个标准的 Build 描述如下：
 
 ```
+stages:                                                 Define stages
+  - {BUILD_STAGE_A}
+  - {BUILD_STAGE_B}
+  - {BUILD_STAGE_C}
+  ...
 builds:
   {BUILD_STAGE_A}:
     base: "golang:1.10.3-alpine3.7"                     Base image
