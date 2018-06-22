@@ -20,6 +20,7 @@
     * [Zone](conception/zone.md)
     * [Pod](conception/pod.md)
     * [Node](conception/node.md)
+* [Spec](spec.md)
 * [Benchmark](benchmark.md)
 * [Quickstart](quickstart/README.md)
     * [Prepare](quickstart/prepare.md)
