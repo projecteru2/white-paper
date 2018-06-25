@@ -6,4 +6,4 @@
 
 ## 属性
 
-Zone 只存在于 Workflow 层面，对于 Core 而言他们是不会知道有另外一组 Core serve 其他集群的。
+Zone 只存在于 Citadel 层面，对于 Core 而言他们是不会知道有另外一组 Core serve 其他集群的。
