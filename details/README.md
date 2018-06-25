@@ -1,4 +1,4 @@
-# Specs
+# Details
 
 这里我们会详细介绍 Eru 的一些东西
 
