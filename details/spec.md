@@ -66,6 +66,7 @@ builds:
     repo: "git@github.com:projecteru2/agent.git"        Github/gitlab repo, only support ssh protocol
     version: "HEAD"                                     Version sha
     dir: "/go/src/github.com/projecteru2/agent"         Working dir
+    submodule: true                                     Prepare submodules
     commands:                                           Building commands
       - cmd1
       - cmd2
