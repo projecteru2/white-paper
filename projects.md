@@ -18,6 +18,7 @@
 * mimiron
 * suramar
 
-## Ops 工具
+## 其他工具
 
-> 整理中
+* [quickstart](https://github.com/projecteru2/quickstart) A one key quickstart
+* [minions](https://github.com/projecteru2/minions) A port for calico libnetwork-plugin

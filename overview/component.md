@@ -41,3 +41,11 @@
   - 提供类似于 AWS Lambda 子命令
   - 通过 cli 操控集群本身
   - 通过 cli 可以在初始化集群之后进行集群自举
+
+### 6. Minions
+
+> A calico libnetwork plugin prot
+
+  - Calico libnetwork plugin 不支持 docker engine
+  - 采用最新的 libcalico + etcdv3 实现
+  - 行为和 calico-cni plugin 一致
