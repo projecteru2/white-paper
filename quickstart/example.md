@@ -5,8 +5,8 @@ Example
 
 比如下面视频中，我们把一个大文本抽成了 100 个随机文件，每个包含若干个单词，使用 Lambda 对每一个文件统计其单词总数。这里我们起了 100 个容器，每个容器 1% 的 CPU 占用。
 
-<script type="text/javascript" src="https://asciinema.org/a/142690.js" id="asciicast-142690" async></script>
+[![asciicast](https://asciinema.org/a/142690.png)](https://asciinema.org/a/142690)
 
 我们也可以在装好 core 之后使用 cli 做 agent 的部署，可以参考下面视频：
 
-<script type="text/javascript" src="https://asciinema.org/a/142614.js" id="asciicast-142614" async></script>
+[![asciicast](https://asciinema.org/a/142614.png)](https://asciinema.org/a/142614)
