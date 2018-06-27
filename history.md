@@ -26,6 +26,8 @@
 
 ### [ELB](https://github.com/projecteru2/elb/blob/master/CHANGELOG.md)
 
+### Minions
+
 ### Lambda
 
 ### Citadel
