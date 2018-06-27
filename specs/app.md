@@ -1,8 +1,8 @@
-# Spec
+# App Spec
 
 #### 定义
 
-Spec 是用来定义如何操作源码或者镜像的 Yaml 描述文件。在 Spec 中分2个部分
+App Spec 是用来定义如何操作源码或者镜像的 Yaml 描述文件。在 Spec 中分2个部分
 
 * App 描述
 * Build 描述
