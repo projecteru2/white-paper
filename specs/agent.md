@@ -37,6 +37,8 @@ Agent 在监听到隶属 Eru 的容器启动后，会把 stdout/stderr 的日志
 nc -l {PORT} -k
 ```
 
+需要注意的是，log 参数支持 tcp 和 udp 2种形式，udp 对于单条日志大小限制为了1024K，因此对于线上系统而言，建议使用 TCP 模式。
+
 对于 Metrics，Agent 会发一组数据到配置的远端 statsd 中：
 
 ```
