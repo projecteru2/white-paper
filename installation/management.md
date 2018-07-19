@@ -25,7 +25,7 @@ docker run -it --rm \
   erucli pod add --favor MEM ${POD_NAME}
 ```
 
-在安装好 Core 之后，集群实际上还是不能启动的，需要先注册 Pod。在注册 Pod 之前我们需要选择使用哪种模型的 Pod，对于 Eru 而言分 CPU 优先（favor CPU）和 MEM 优先（favor MEM）。Eru 反对实体富容器Pod，但通过这种形式可以把多种相关容器限定在一组机器中组成机器层面上的**富容器**。
+在安装好 Core 之后，集群实际上还是不能启动的，需要先注册 Pod。在注册 Pod 之前我们需要选择使用哪种模型的 Pod，对于 Eru 而言分 CPU 优先（favor CPU）和 MEM 优先（favor MEM）。Eru 反对实体富容器 Pod，但通过这种形式可以把多种相关容器限定在一组机器中组成机器层面上的**富容器**。
 
 对于 CPU 优先的 Pod 中每个节点在部署容器的时候均会精确的分配容器所占用 CPU，内存控制交由容器内进程自行控制。对于自带内存控制又对 CPU 性能敏感的应用如 redis 而言，是一种比较好的模式。
 

@@ -12,7 +12,7 @@ Eru 集群只需要以下几个东西
 
 #### 安装依赖
 
-1. ETCD 建议参考官方安装[简介](https://github.com/coreos/etcd/blob/master/Documentation/op-guide/clustering.md)在生产环境中组成 3 节点以上的静态集群或者动态集群。不过在这里建议每一台 Node 上通过 [etcd proxy](https://coreos.com/etcd/docs/latest/v2/proxy.html) 来提升使用体验。
+1. ETCD 建议参考官方安装[简介](https://github.com/coreos/etcd/blob/master/Documentation/op-guide/clustering.md)在生产环境中组成 3 节点以上的静态集群或者动态集群。不过在这里建议每一台 Node 上通过 [etcd proxy](https://coreos.com/etcd/docs/latest/v2/proxy.html) 来提升使用体验。ETCD 集群只需要一个即可，余下的每台机器上都可以批量部署 Proxy。
 
 2. Docker 初始化可以参考以下[脚本](https://github.com/projecteru2/quickstart/blob/master/docker.sh)。以 CentOS 7 为例，每一台 Docker 机初始化的时候我们要注意这些地方：
 
@@ -53,4 +53,5 @@ Eru 集群只需要以下几个东西
     rm -rf server.csr client.csr
     mv ca.* client.* server.* /etc/docker/tls
     ```
+
 完成机器的配置后，就可以来部署安装 Eru 了。
