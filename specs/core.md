@@ -33,6 +33,14 @@ docker:                                             Docker 配置
     namespace: "projecteru2"                        Registry 的 Namespace
     build_pod: "eru-test"                           采用哪个 Pod 用于 build
     local_dns: true                                 是否用本地 DNS，如果 create 容器的时候没下发 DNS 将会使用这个
+    auths:                                          Push 和 Pull 验证，core 支持配置多个 registry
+      registry1:
+        username: "user1"
+        password: "password1"
+      registry2:
+        username: "user2"
+        password: "password2"
+      ...
 
 scheduler:                                          CPU 优先调度器的配置
     maxshare: -1                                    最大有多少碎片核，-1 表示不限制
