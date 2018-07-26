@@ -48,6 +48,10 @@ entrypoints:
         ...
   {ENTRYPOINT_C}:                           Application role C
         ...
+dns:                                        User define dns
+  - {DNS1}
+  - {DNS2}
+   ...
 ```
 
 #### Build
