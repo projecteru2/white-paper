@@ -44,8 +44,9 @@
 
 ### 6. Minions
 
-> A calico libnetwork plugin prot
+> A calico libnetwork plugin port
 
   - Calico libnetwork plugin 不支持 docker engine
   - 采用最新的 libcalico + etcdv3 实现
   - 行为和 calico-cni plugin 一致
+  - 支持 bird 的最新版本和其特性
