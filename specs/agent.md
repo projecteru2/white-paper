@@ -14,12 +14,12 @@ docker:                                         Docker 配置
 metrics:                                        Metrics 配置
   step: 30                                      发送间隔
   transfers:
-    - 127.0.0.1:8125                            可以配置多个 statsd 后端
+    - 127.0.0.1:8125                            可以配置多个 statsd 后端，做负载均衡分片，目前仅支持`udp`协议的statsd，但如果挂掉其中一个地址，将会`持续`丢失这个分片监控
 api:                                            profile API 配置
   addr: 127.0.0.1:12345                         profile API 地址
 log:                                            日志选项
   forwards:
-    - tcp://127.0.0.1:5144                      日志远端
+    - tcp://127.0.0.1:5144                      日志远端，做负载均衡分片，挂掉一个地址将会`持续`丢失这个分片的日志
   stdout: False                                 是否把容器日志打到 agent 自身日志流里面
 ```
 
@@ -68,3 +68,4 @@ eru.{APPNAME}.{TAG}.{ENTRYPOINT}.{HOST}.{CONTAINER_ID}.cali0.packets.sent:0|g
 ```
 
 通过这个数据我们就可以从容器外面监控容器行为。
+
