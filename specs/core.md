@@ -7,44 +7,54 @@ Core Config 是用来决定 Core 行为的配置，一般会保存在 ```/etc/er
 ```
 log_level: "DEBUG"                                  决定 core 自身日志等级
 bind: ":5001"                                       gRPC 服务绑定地址和端口
-statsd: "127.0.0.1:8125"                            资源分配情况将会发送到这个 statsd 地址
-image_cache: 2                                      每个 node 上缓存几个版本的镜像
 profile: ":12346"                                   profile 端口
 global_timeout: 300                                 全局操作超时，目前只用于容器删除的时候加锁防止重复删除
-lock_timeout: 30                                    分布式锁超时时间
+lock_timeout: 30                       optional     分布式锁超时时间
+statsd: "127.0.0.1:8125"               optional     core 的状态将会发送到这个 statsd 地址
 
-etcd:                                               ETCD 配置
-    machines:
-        - "http://127.0.0.1:2379"                   ETCD 地址，支持多机
-    prefix: "/core"                                 数据 prefix
-    lock_prefix: "core/_lock"                       全局锁的 prefix
+auth:                                  optional     gRPC basic auth
+    username: "user"
+    password: "password"
 
-git:                                                此处主要用于 Build
+git:                                   optional     此处主要用于 Build
     public_key: "***REMOVED***"                     SSH pub key path
     private_key: "***REMOVED***"                    SSH priv key path
     token: "***REMOVED***"                          对 github/gitlab 而言需要在这里填 access token
     scm_type: "github"                              现在支持 github/gitlab
 
+etcd:                                               ETCD 配置
+    machines:
+        - "http://127.0.0.1:2379"                   ETCD 地址，支持多机
+    prefix: "/core"                    optional     数据 prefix
+    lock_prefix: "core/_lock"                       全局锁的 prefix
+
 docker:                                             Docker 配置
-    log_driver: "json-file"                         默认日志驱动
+    version: "1.32"                    optional     Docker API Version
     network_mode: "bridge"                          默认网络模型
     cert_path: "/etc/eru/tls"                       Docker 的 tls 缓存地址
     hub: "hub.docker.com"                           Registry 地址
     namespace: "projecteru2"                        Registry 的 Namespace
     build_pod: "eru-test"                           采用哪个 Pod 用于 build
     local_dns: true                                 是否用本地 DNS，如果 create 容器的时候没下发 DNS 将会使用这个
+    log:                               optional     默认日志驱动
+        type: "journald"
+        config:
+            config1: "value"
     auths:                                          Push 和 Pull 验证，core 支持配置多个 registry
-      registry1:
+      hub.docker.com:
         username: "user1"
         password: "password1"
-      registry2:
+      hub2.docker.com:
         username: "user2"
         password: "password2"
       ...
 
-scheduler:                                          CPU 优先调度器的配置
+scheduler:                             optional     CPU 优先调度器的配置
     maxshare: -1                                    最大有多少碎片核，-1 表示不限制
     sharebase: 10                                   碎片核最多能分多少份，10表示最小单位是10%，100表示为1%以此类推
+
+virt:                                               yavirt api 版本
+    version: "v1"
 
 syslog:                                             创建的容器如果是 DEBUG 模式则会是用这里的配置
     address: "udp://localhost:5111"                 地址

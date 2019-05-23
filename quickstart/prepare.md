@@ -3,9 +3,9 @@ Prepare
 
 一个 Eru 集群分2个部分，对于底层 Core 来说需要先准备以下基础设施：
 
-1. [Docker](https://github.com/moby/moby) ce-17.05+
+1. [Docker](https://github.com/moby/moby) 18.07+
 2. [etcd](https://github.com/coreos/etcd) 3.2.5+ 我们需要用到 3.2.5+ 提供的 mutex 行为
-3. [calicoctl](https://github.com/projectcalico/calicoctl) 1.5.0+
+3. [calicoctl](https://github.com/projectcalico/calicoctl) 3.3+
 
 #### 配置
 

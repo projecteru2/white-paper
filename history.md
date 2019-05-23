@@ -25,9 +25,3 @@
 本质上是在 Node 上的一个 Websocket server，这样设计的好处是 Core 可以动态感知 Agent 的可用性，但带来了管理规模上的复杂度。这个版本里面尝试了各种日志输出手段，最后选择了 [logspout](https://github.com/gliderlabs/logspout) 作为参考对象，当然做了很大的[修改](https://github.com/gliderlabs/logspout/pull/15), 并做了一点微小的[工作](https://github.com/gliderlabs/logspout/pull/8)。
 
 ### [ELB](https://github.com/projecteru2/elb/blob/master/CHANGELOG.md)
-
-### Minions
-
-### Lambda
-
-### Citadel

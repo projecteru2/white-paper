@@ -19,7 +19,7 @@
 
 ![](img/process.png)
 
-我们可以看到，一个 Eru 集群是由一组 eru-core 控制多个 pod，每个 pod 中有多个 node，通过这些 node 来部署目标容器。外部流量可以通过 elb 导入到集群中，也可以通过其他的方式。操作人员只需要关注 citadel 或者 cli 就好了。那么我们如何部署一个真实的集群呢？
+我们可以看到，一个 Eru 集群是由一组 eru-core 控制多个 pod，每个 pod 中有多个 node，通过这些 node 来部署目标容器/虚拟机。外部流量可以通过 elb 导入到集群中，也可以通过其他的方式。操作人员只需要关注 citadel 或者 cli 就好了。那么我们如何部署一个真实的集群呢？
 
 ### etcd & docker
 
@@ -27,7 +27,7 @@
 
 然后，将需要接入 Eru 的 node 都预先准备好上面的 docker。需要配置的有两项东西，一项是为了保证 core 与 docker daemon 的通讯安全，我们推荐使用 tls 来配置 docker daemon 。另外一项需要注意的是 docker daemon 需要开启 `cluster-store`, 这个选项会通过 etcd 将我们在其上面配置的 SDN 信息共享到其他的 node，如果你有使用 SDN 的话，一定不要忘记配置它。具体可以参考 [quickstart/docker.sh](https://github.com/projecteru2/quickstart/blob/master/docker.sh) 和 [dockerd配置](https://docs.docker.com/engine/reference/commandline/dockerd/)，在 quickstart 的脚本中我们把 docker daemon 的 cluster-store 指向了那个预先安装的 etcd，并启用了 tls，在生产环境中亦是如此。
 
-### (可选) calico
+### (optional) calico
 
 在我们自己用的集群中是使用 Calico 作为 SDN provider 的，如果你也需要用可以参考[calico.sh](https://github.com/projecteru2/quickstart/blob/master/calico.sh) 的初始化步骤。要注意的是，`docker network create` 只需要在任意节点运行一次即可，并不需要运行多次。只要运行了一次之后，以同一个 etcd 作 cluster-store 的 docker daemon 都会知道有了这么一个网络。
 
@@ -35,7 +35,7 @@
 
 ### eru-core
 
-现在我们需要找一个地方运行一个或者一组 eru-core。对于高可用的系统而言，我们建议跑多个 eru-core 并在之上通过LVS/haproxy 的组件来保证起服务高可用。eru-core 在整个集群没有一个 eru-core 的时候是无法完成[自举](https://github.com/projecteru2/core#build-and-deploy-by-eru-itself)的，因此推荐使用 rpm 的方式或者通过原始的 docker run 的方式启动第一个 eru-core。
+现在我们需要找一个地方运行一个或者一组 eru-core。对于高可用的系统而言，我们建议跑多个 eru-core 并在之上通过 LVS/haproxy 的组件来保证起服务高可用。eru-core 在整个集群没有一个 eru-core 的时候是无法完成[自举](https://github.com/projecteru2/core#build-and-deploy-by-eru-itself)的，因此推荐使用 rpm 的方式或者通过原始的 docker run 的方式启动第一个 eru-core。
 
 无论怎样一旦配置好 etcd 并启动 eru-core 之后，eru 集群就可以说准备好了。
 
@@ -77,7 +77,7 @@ docker run -it --rm --privileged \
 
 你可以通过手动部署 agent 也可以通过镜像部署，在 quickstart 中我们是通过 cli 自举部署了 agent，具体可以参考[这里](https://github.com/projecteru2/quickstart/blob/master/agent.sh)。
 
-### (可选) metrics and logs
+### (optional) metrics and logs
 
 测试的时候可以使用 nc 来模拟 tcp 服务，在正式生产中如果你有对应的 `logs` 和 `metrics` 服务那是极好不过了。但要记得修改 core 和 agent 对应的配置文件。
 

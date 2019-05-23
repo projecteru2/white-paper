@@ -2,18 +2,19 @@
 
 ### 基于配置文件定义应用
 
-- 在现有的应用上只需要增加一个配置文件 app.yaml 即可定义应用在 Eru 集群里的编译和运行
+- 在现有的应用上只需要增加一个配置文件 spec.yaml 即可定义应用在 Eru 集群里的编译和运行
+- 配置文件不与代码/可运行镜像绑定，可以放在任何位置
 - 对现有项目 0 侵入
 
 ### 调度器中立
 
-- Eru core 层面不限制 workflow 行为，只关心资源和容器编排调度
+- Eru core 层面不限制 workflow 行为，只关心资源和编排调度
 - 通过 [cli](https://github.com/projecteru2/cli) 可以使用本地或者远程配置直接通过 Eru 来部署已有的镜像
 - 方便接入上层应用 PaaS 亦或是现有的其他基础设施
 
 ### SDN 网络安全隔离
 
-- 使用开源的 [calico](https://github.com/projectcalico/calico) 项目构建 [SDN 网络](https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%AE%9A%E7%BE%A9%E7%B6%B2%E8%B7%AF)
+- 默认使用开源的 [calico](https://github.com/projectcalico/calico) 项目构建 [SDN 网络](https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%AE%9A%E7%BE%A9%E7%B6%B2%E8%B7%AF)
 - 高效率的应用内网络互通
 - 多租户隔离(依托于 calico 自己的 ACL 由 Ops 层面决定)
 - 支持其他不同的 SDN Driver
@@ -25,31 +26,23 @@
 - 提供动态运行代码/命令入口 (类似于 [AWS lambda](https://aws.amazon.com/cn/lambda/))
 - 容器技术天然的支持隔离系统和应用的依赖
 - 提供无痛升级能力
-- 集群可配置全量缓存最近多个版本的镜像，加速部署回滚等行为
-- 应用镜像与 SCM 提交历史绑定，方便回滚操作（Citadel）
-- 多可用区支持（Citadel）
+
+### 支持多种 executor
+
+- Eru 可以混合编排容器和虚拟机
+- Eru 允许自定义 Executor
 
 ### 应用在线扩容缩容
 
 - 自行设计调度核心进行高效调度
 - 支持用户从数量和资源两个维度进行扩容/缩容
 - 支持应用在不下线的前提下实时重分配资源
-- 支持 in-place 就地更新容器
-
-### 节点在线扩容缩容
-
-- 通过 [ansible](https://github.com/ansible/ansible) 开发集群管理运维工具包
-- Pod/Node 操作均可以在线执行，不影响当前状态
-
-### 统一认证
-
-- Workflow 依托于自行开发统一认证组件 （sso）
-- 支持 oauth2 的多种认证方式
+- 支持 in-place 复用资源配额就地更新
 
 ### 服务健康检查
 
-- 提供自定义服务健康检查，实时知道每一个应用容器的状态
-- 绑定服务发现实现 0 中断服务保证
+- 提供自定义服务健康检查，实时知道每一个应用状态 （Agent）
+- 同时支持 tcp 和简单 http 健康检查行为
 
 ### 集群体系化的日志收集
 
@@ -61,14 +54,15 @@
 
 - 基于 [Openresty](https://openresty.org/en/) 实现了 7 层 Elastic load balancer
 - 配合健康检查和 Eru 应用控制能力实现动态发布
-- 在应用容器发生异常时通过 Eru 反馈机制实时进行节点摘除行为，避免服务崩溃
+- 在应用发生异常时通过 Eru 反馈机制实时进行节点摘除行为，避免服务崩溃
 
-### 可选的集群体系化的备份和恢复
+### 可选的存储配置和备份
 
-- 支持在 app.yaml 中显式声明 volume 备份需求和策略，以及设定备份策略
-- 支持指定备份恢复
+- 支持在 spec.yaml 中显式声明 volume
+- 支持备份
 
 ### 支持配置分离
 
-- 允许动态传入文件至容器运行时
+- 允许创建时动态传入文件
 - 允许自定义环境变量
+- 允许运行时传入不同配置

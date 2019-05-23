@@ -7,18 +7,14 @@
 * [core](https://github.com/projecteru2/core)
 * [agent](https://github.com/projecteru2/agent)
 * [cli](https://github.com/projecteru2/cli)
+* [yavirt](https://github.com/projecteru2/yavirt)
 
 ## 服务发现
 
 * [elb](https://github.com/projecteru2/elb)
 
-## Workflow 和内置应用
-
-* [citadel](https://github.com/projecteru2/citadel)
-* mimiron
-* suramar
-
-## 其他工具
+## 其他
 
 * [quickstart](https://github.com/projecteru2/quickstart) A one key quickstart
 * [minions](https://github.com/projecteru2/minions) A port for calico libnetwork-plugin
+* [demo](https://raw.githubusercontent.com/projecteru2/site/master/content/demo) A standalone demo

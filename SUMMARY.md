@@ -27,7 +27,6 @@
     * [App Spec](specs/app.md)
     * [Core Config](specs/core.md)
     * [Agent Config](specs/agent.md)
-* Advance Usage
 * [Component](component/README.md)
     * [Core](component/core.md)
     * [Agent](component/agent.md)

@@ -17,11 +17,13 @@ App Spec 是用来定义如何操作源码或者镜像的 Yaml 描述文件。�
 appname: "{APPNAME}"                        Application ident
 entrypoints:
   {ENTRYPOINT_A}:                           Application role A
-    cmd: "run something"                    How to run this role
-    restart: always/""                      Always means alway restart when failed, otherwise it will try 3 times then stop
+    cmd: "run something"                    How to run this role, depend on image
     privileged: true/false                  Run in privileged mode
-    log_config: "journald/none"             Same as docker log config
     dir: "path"                             Working dir
+    log: 
+      type: "journald/none"                 Same as docker log driver name
+      config:                               Same as docker log driver config
+        config1: "value"
     publish:                                Which port(s) bind this Application
       - "12345"
       - "7788"
@@ -43,15 +45,30 @@ entrypoints:
         - cmd1
         - cmd2
         ...
-      force: true/false
+      force: true/false                     Force to stop container if it set true and before_stop failed.
+    restart: always/""                      Always or empty. Always means alway restart when failed, otherwise it will try 3 times then stop
+    sysctls:
+      net.ipv4.ip_forward: "1"
   {ENTRYPOINT_B}:                           Application role B
         ...
   {ENTRYPOINT_C}:                           Application role C
         ...
+volumes:                                    Mount local dir insider container/vm
+  - path1:path2:ro
+  - path3:path4
+  ...
+labels:                                     Add labels to container/vm
+  label1: "something"
+  label2: "anything"
+  ...
 dns:                                        User define dns
   - {DNS1}
   - {DNS2}
-   ...
+  ...
+extra_hosts:                                Add hosts item in host file
+  - domain1:IP1
+  - domain2:IP2
+  ...
 ```
 
 #### Build
