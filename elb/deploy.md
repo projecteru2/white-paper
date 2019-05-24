@@ -2,7 +2,7 @@
 
 ## 线上部署
 
-在 citadel 中进行线上部署，只需要遵循 citadel 文档即可。
+可以参考 README 中如何通过 cli 部署 elb.
 
 ## 本地部署
 

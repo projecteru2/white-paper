@@ -4,7 +4,7 @@
 
 >目标是做成可以横向扩展简高可用以及高性能的资源调度核心
 
-![](img/eru.png)
+![](img/core.png)
 
 物理层面来说，用户操作的 UI 和应用抽象都实现在需要执行实现，现阶段只通过 [cli](https://github.com/projecteru2/cli) 提供命令行支持。它使用 gRPC 与 core 交互，从而的把 App 部署到 Eru 集群之中。
 
