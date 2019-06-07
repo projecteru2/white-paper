@@ -7,7 +7,7 @@
 * [core](https://github.com/projecteru2/core)
 * [agent](https://github.com/projecteru2/agent)
 * [cli](https://github.com/projecteru2/cli)
-* [yavirt](https://github.com/projecteru2/yavirt)
+* yavirt
 
 ## 服务发现
 
