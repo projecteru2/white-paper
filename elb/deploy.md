@@ -6,7 +6,7 @@
 
 ## 本地部署
 
-* 下载 [openresty-1.11.2.2](https://openresty.org/download/openresty-$OVERSION.tar.gz) 以及 [ngx_http_dyups_modules](https://github.com/yzprofile/ngx_http_dyups_module) 的源码;
+* 下载 [openresty](https://openresty.org/cn/download.html) 以及 [ngx_http_dyups_modules](https://github.com/yzprofile/ngx_http_dyups_module) 的源码;
 
 * 编译选项: `./configure --with-http_realip_module --add-module=../ngx_http_dyups_module`
 

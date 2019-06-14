@@ -19,7 +19,7 @@
 - 多租户隔离(依托于 calico 自己的 ACL 由 Ops 层面决定)
 - 支持其他不同的 SDN Driver
 
-### 基于容器技术支持多样化的技术栈
+### 容器技术支持多样化的技术栈
 
 - 使用开源的 [docker](https://github.com/moby/moby) 项目构建容器云
 - 自动生成 Dockerfile, 支持多步构建部分替代 CI 能力
