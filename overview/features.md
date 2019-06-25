@@ -21,7 +21,7 @@
 
 ### 容器技术支持多样化的技术栈
 
-- 使用开源的 [docker](https://github.com/moby/moby) 项目构建容器云
+- 支持 [docker](https://github.com/moby/moby) 构建容器云
 - 自动生成 Dockerfile, 支持多步构建部分替代 CI 能力
 - 提供动态运行代码/命令入口 (类似于 [AWS lambda](https://aws.amazon.com/cn/lambda/))
 - 容器技术天然的支持隔离系统和应用的依赖
@@ -29,7 +29,7 @@
 
 ### 支持多种 executor
 
-- Eru 可以混合编排容器和虚拟机
+- Eru 支持混合编排容器和虚拟机
 - Eru 允许自定义 Executor
 
 ### 应用在线扩容缩容
