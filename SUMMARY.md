@@ -8,6 +8,7 @@
     * [Features](overview/features.md)
     * [Architect](overview/arch.md)
     * [Resource](overview/resource.md)
+    * [HealthCheck](overview/healthcheck.md)
     * [Component](overview/component.md)
 * [Conception](conception/README.md)
     * [Application](conception/application.md)
