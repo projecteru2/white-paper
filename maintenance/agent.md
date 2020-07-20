@@ -19,4 +19,4 @@ docker run -d --privileged \
   /usr/bin/eru-agent
 ```
 
-对于生产环境而言，为了避免 Docker 自身奇怪的问题和保证 Eru 整个集群旁路控制，最好就是每台机器用 RPM 安装 Agnet，只需要对 Agent 暴露 Core 的地址即可。
+对于生产环境而言，为了避免 Docker 自身奇怪的问题和保证 Eru 整个集群旁路控制，最好就是每台机器用 RPM 安装 Agent，只需要对 Agent 暴露 Core 的地址即可。
