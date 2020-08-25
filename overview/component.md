@@ -2,7 +2,7 @@
 
 ### 1. Core
 
->调度器核心
+> 调度器核心
 
   - 无状态
   - 生成编排方案
@@ -10,7 +10,7 @@
 
 ### 2. Agent
 
->Node 上的控制器
+> Node 上的控制器
 
   - 资源消耗低
   - 负责容器检查
@@ -42,3 +42,11 @@
   - 采用最新的 libcalico + etcdv3 实现
   - 行为和 calico-cni plugin 一致
   - 支持 bird 的最新版本和其特性
+  - 支持原生 fixed IP 特性
+
+### 7. Barrel
+
+> A docker daemon wrapper
+
+  - Docker wrapper for fixed IP feature
+  - 原生区分了 stop/remove 行为 

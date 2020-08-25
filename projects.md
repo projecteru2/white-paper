@@ -7,6 +7,8 @@
 * [core](https://github.com/projecteru2/core)
 * [agent](https://github.com/projecteru2/agent)
 * [cli](https://github.com/projecteru2/cli)
+* [minions](https://github.com/projecteru2/minions)
+* [barrel](https://github.com/projecteru2/barrel)
 * yavirt
 
 ## 服务发现
@@ -16,5 +18,4 @@
 ## 其他
 
 * [quickstart](https://github.com/projecteru2/quickstart) A one key quickstart
-* [minions](https://github.com/projecteru2/minions) A port for calico libnetwork-plugin
 * [demo](https://raw.githubusercontent.com/projecteru2/site/master/content/demo) A standalone demo

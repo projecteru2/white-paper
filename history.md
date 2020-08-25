@@ -2,6 +2,8 @@
 
 ### Core
 
+* [Current](https://github.com/projecteru2/core/releases)
+
 * 2.0
 
 2016-2017 ENJOY 容器调度平台，使用 Golang 重写，放弃了复杂的 Websocket 反连结构。通过 gRPC 重新实现了 Core 的接口，架构上 Core 无状态化，和 Agent 平行。
@@ -16,6 +18,8 @@
 
 ### Agent
 
+* [Current](https://github.com/projecteru2/agent/releases)
+
 * 2.0
 
 和 Core 解耦，本质上是跑在 Node 上的一个监听代理，不负责具体的容器操作，负责日志和 metrics 等。
@@ -24,4 +28,14 @@
 
 本质上是在 Node 上的一个 Websocket server，这样设计的好处是 Core 可以动态感知 Agent 的可用性，但带来了管理规模上的复杂度。这个版本里面尝试了各种日志输出手段，最后选择了 [logspout](https://github.com/gliderlabs/logspout) 作为参考对象，当然做了很大的[修改](https://github.com/gliderlabs/logspout/pull/15), 并做了一点微小的[工作](https://github.com/gliderlabs/logspout/pull/8)。
 
-### [ELB](https://github.com/projecteru2/elb/blob/master/CHANGELOG.md)
+### Cli
+
+* [Current](https://github.com/projecteru2/cli/releases)
+
+### Minions
+
+* [Current](https://github.com/projecteru2/minions/releases)
+
+### Barrel
+
+* [Current](https://github.com/projecteru2/barrel/releases)

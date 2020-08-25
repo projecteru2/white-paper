@@ -1,13 +1,13 @@
 Benchmark
 ==========
 
-对于编排和调度平台而言，最重要的就是资源分配和调度器的实现，在前面我们介绍了资源分配和调度器的算法，这里我们简单的来对其做一个 Benchmark。
+对于编排和调度平台而言，最重要的就是资源分配和调度器的实现，我们对我们自己的调度编排算法做了一次 Benchmark。
 
 具体的 Benchmark 有:
 
-* [Benchmark_CPUAlloc](https://github.com/projecteru2/core/blob/master/scheduler/complex/potassium_test.go#L787)
-* [Benchmark_MemAlloc](https://github.com/projecteru2/core/blob/master/scheduler/complex/potassium_test.go#L805)
-* [Benchmark_CommunismDivisionPlan](https://github.com/projecteru2/core/blob/master/scheduler/complex/communism_test.go#L67)
+* [Benchmark_CPUAlloc](https://github.com/projecteru2/core/blob/master/scheduler/complex/potassium_test.go#L734)
+* [Benchmark_MemAlloc](https://github.com/projecteru2/core/blob/master/scheduler/complex/potassium_test.go#L752)
+* [Benchmark_CommunismDivisionPlan](https://github.com/projecteru2/core/blob/master/scheduler/complex/communism_test.go#L81)
 
 前面2个分别对应于 CPU 优先的分配和 Memory 优先的分配，模拟情况是：
 

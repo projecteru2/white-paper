@@ -111,6 +111,8 @@ builds:
       src_path1: dst_path1
       src_path2: dst_path2
       ...
+    stop_signal: ""                                     If provide, will use this signal for stopping container
+    security: true/false                                If provide, will remove .git dir after clone
   {BUILD_STAGE_B}:
     ...
   {BUILD_STAGE_C}:

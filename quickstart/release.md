@@ -1,6 +1,6 @@
 ## Quickstart 都做了什么
 
-在运行了 [projecteru2/quickstart](https://github.com/projecteru2/quickstart/) 的 `quickstart.sh` 后，我们在一台机器上部署了：
+在运行了 [projecteru2/quickstart](https://github.com/projecteru2/quickstart/) 的后，我们在一台机器上部署了：
 
 1. docker with TLS
 2. standalone etcd

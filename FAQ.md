@@ -7,7 +7,7 @@ A: after_start 不是用于 healthcheck 这个目的的，主要是有些业务�
 
 Q: after_start 是否有退出状态验证?
 
-A: after_start 的成功与否都会在日志中表现出来，可以参考[这里](https://github.com/projecteru2/core/blob/master/cluster/calcium/create_container.go#L184)，当然了如果有强制需要 after_start ，那么这里可以增加容器回收流程。
+A: after_start 的成功与否都会在日志中表现出来，可以参考[这里](https://github.com/projecteru2/core/blob/master/cluster/calcium/hook.go#L10)，当然了如果有强制需要 after_start ，那么这里可以增加容器回收流程。
 
 Q: healthcheck 是否允许脚本方法判断而非固定使用 HTTP.  比如应对 Java 工程中的 dubbo rpc 框架?
 

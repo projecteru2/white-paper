@@ -9,7 +9,7 @@ Application 在 Eru 中用于描述一个可部署的项目。对于 Core 而言
 对于 App 而言，最重要的属性主要是：
 
 1. Name, 每一个 Eru App 的 Name 都应该是唯一的。
-2. Entrypoints，用于描述代码的入口。App 支持多种入口，每一种入口的日志都会自动的分流到对应远端。
-3. 对容器型应用而言可选 Stages/Builds，用于描述如何讲项目打包成 Docker 镜像，也可以用于简单的 CI process。
+2. Entrypoint，用于描述代码的入口。App 支持多种入口，代表资源的不同行为，在容器引擎的实现下每一种入口的日志都会自动的分流到对应远端。
+3. 可选 Stages/Builds，用于描述如何讲项目打包成镜像，也可以用于简单的 CI process。
 
 在 Eru 里面一切都是一个描述文件，具体可以参考 [agent 自举的描述文件](https://github.com/projecteru2/agent/blob/master/app.yaml)。
