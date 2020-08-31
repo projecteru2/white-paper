@@ -22,7 +22,7 @@
     * [Core Config](specs/core.md)
     * [Agent Config](specs/agent.md)
 * [Quickstart](quickstart/README.md)
-    * [Prepare](quickstart/prepare.md)
+    * [Install](quickstart/install.md)
     * [Release](quickstart/release.md)
     * [Example](quickstart/example.md)
 * [Installation](installation/README.md)
