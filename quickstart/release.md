@@ -1,18 +1,3 @@
-## Quickstart 都做了什么
-
-在运行了 [projecteru2/quickstart](https://github.com/projecteru2/quickstart/) 的后，我们在一台机器上部署了：
-
-1. docker with TLS
-2. standalone etcd
-3. core
-4. agent
-
-在逻辑上，我们使用 `cli pod add eru` 加了一个叫 `eru` 的 pod，并把运行 quickstart 脚本的机器通过 `cli node add eru` 命令加入到了这个 pod 中。core 会自动探测目标 node 的 CPU 和内存，在保留 1G 可用内存的前提下生成 node 的配置文件，存于 etcd 中。
-
-为了方便观察到资源的调度，这个 `eru` pod 我们设置为了 `CPU` 优先。因此这是 `lambda.sh` 中我们可以通过 --cpu 0.01 这样来限制运行容器的资源。node 上每个 CPU 都分成了 100 份计算资源，所以 0.01 意味着最低保证有 1% 的 CPU 资源。
-
-现在你能在这台机器上使用 `erucli` 命令（通过 docker run 执行）来操作这个单机 Eru 了。
-
 ## 在生产环境中部署和配置 Eru
 
 首先我们来看看一个典型的 Eru 集群结构是怎样的，如下图：
