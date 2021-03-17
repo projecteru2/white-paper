@@ -2,7 +2,9 @@
 
 ### 第一个应用
 
-部署 eru 应用需要写一个 spec.yaml, 详细的 spec 在[这里](TODO).
+“应用”在 Eru 中用于描述一个可部署的项目, 详细的文档在[这里](https://book.eru.sh/conception/application)
+
+部署 eru 应用需要写一个 spec.yaml, 详细的 spec 在[这里](https://book.eru.sh/specs/app).
 
 不过最简单的 spec 写成这样就可以了:
 
@@ -22,7 +24,11 @@ root@localhost:~# eru-cli workload deploy --image bash --pod testpod --entry zc 
 INFO[2021-03-12 10:03:39] [Deploy] Success 38078e63ac63c4f8d805ed3d0b94ab2ab23333f9e05ac944e9028571fc0a065f zc_zc_cuQhQH node1 1 1 map[] 536870912 536870912 map[] map[]
 ```
 
-### CRUD
+`--image bash` 指定了使用 bash 镜像; `--pod testpod` 指定使用刚才创建的 pod (里面有一个节点); `--entry` 指定 spec 里的 `zc`.
+
+### Workload
+
+Workload 可以先参看[文档](https://book.eru.sh/conception/workload)
 
 1. 查看已部署的 workload
 

@@ -16,6 +16,8 @@ docker run -d --net host --name etcd --restart always quay.io/coreos/etcd:v3.4.9
 
 ### 准备一个配置文件
 
+这是 eru-core 的配置文件, 详细的配置在[这里](https://github.com/projecteru2/core/blob/master/core.yaml.sample)
+
 ```
 mkdir -p /etc/eru
 cat <<! > /etc/eru/core.yaml
@@ -52,9 +54,6 @@ docker:
 scheduler:
     maxshare: -1
     sharebase: 100
-
-virt:
-    version: "v1"
 !
 ```
 
@@ -92,7 +91,7 @@ eru-cli pod list
 
 ### 加节点
 
-就把自己所在的[节点](TODO)加入 eru-core:
+就把自己所在的[节点](https://book.eru.sh/conception/node)加入 eru-core:
 
 需要先把 dockerd 设置为绑定 2376 端口:
 
@@ -101,7 +100,7 @@ sed -i 's!ExecStart=.*!\0 -H tcp://0.0.0.0:2376!' /lib/systemd/system/docker.ser
 systemctl daemon-reload && systemctl restart docker
 ```
 
-然后就可以在 eru-core 里注册节点了.
+然后就可以在 eru-core 里注册[节点](https://book.eru.sh/conception/node)了. 不过你需要先添加一个 [pod](https://book.eru.sh/conception/pod)
 
 ```
 eru-cli pod add testpod

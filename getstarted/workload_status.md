@@ -83,7 +83,7 @@ root@localhost:~# eru-cli workload get-status cd7c894aa0736bdf1f884115b18416bbee
 
 eru-agent 是 eru 对 dockerd 容器 runtime 提供的节点 daemon, 对于不同的 runtime 有不同的服务, 比如 yavirtd 本身自己也包含了这部分健康监控和状态上报的机制.
 
-实例的健康监控目前支持 http 和 tcp, 在 [spec 的文档里](TODO) 可以看到详细的配置.
+实例的健康监控目前支持 http 和 tcp, 在 [spec 的文档里](https://book.eru.sh/specs/app) 可以看到详细的配置.
 
 ### Workload Status
 
@@ -113,3 +113,5 @@ message WorkloadStatusStreamMessage {
 ReplicaSet 的功能可以通过一个更上层的服务, 部署服务之后, 调用上述 `WorkloadStatusStream` 接口去 watch 状态, 如果发现实例挂掉就去补充上新实例; 如果旧的下线实例后来又恢复了则把多的实例清除掉.
 
 通过这个机制可以实现高层的 PaaS 服务, 包括灾难恢复, 自动化迁移, 等上层业务系统.
+
+可以参考 [Workload](https://book.eru.sh/conception/workload) 的文档.

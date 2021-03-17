@@ -2,7 +2,7 @@
 
 ### 资源
 
-eru 目前管理了四大资源: CPU, Memory, Volume, Storage, 详细的文档在[这里](TODO).
+eru 目前管理了四大资源: CPU, Memory, Volume, Storage, 详细的文档在[这里](https://book.eru.sh/conception/resource).
 
 不过我们可以先用几个典型使用场景来感受一下.
 
@@ -15,7 +15,7 @@ INFO[2021-03-15 02:26:46] [Deploy] Success ae96772e9cc60b4bc36d663cf66d0b04a849d
 
 命令行里的 `--cpu-request 1 --cpu-limit 2` 和 `--memory-request 15M --memory-limit 15M` 就是用来指定资源配额的.
 
-request 和 limit 的区别在[这里](TODO), 不过如果你搞不清楚的话直接让两个都配置一样的值.
+request 和 limit 的区别在[这里](https://book.eru.sh/conception/resource), 不过如果你搞不清楚的话直接让两个都配置一样的值.
 
 查看容器的时候会显示资源:
 
@@ -38,7 +38,7 @@ root@localhost:~# eru-cli workload get ae96772e9cc60b4bc36d663cf66d0b04a849d144c
 
 2. cpu 的绑定
 
-cpu 绑定的行为稍微复杂一点, 可以看[这里](TODO).
+cpu 绑定的行为稍微复杂一点, 可以看[这里](https://book.eru.sh/conception/cpu).
 
 不过可以简单理解为进程会绑定在指定的 cpu core 上.
 
@@ -141,7 +141,7 @@ root@localhost:~# eru-cli workload deploy --pod testpod --image bash --entry zc 
 INFO[2021-03-15 04:04:16] [Deploy] Success e07fdc0ce44f332e502b3bf77b8f343fe6f5e0fa5f35b04d1f71042bf16a0026 zc_zc_ogOlab node1 1 1 map[] 536870912 536870912 map[] map[]
 ```
 
-可以看到容器从节点的 `/data` volume 上划分出去里 20,000,000 bytes  的空间给容器, 节点上的资源也能反映出来被使用了这么多:
+可以看到容器从节点的 `/data` volume 上划分出去里 20,000,000 bytes 的空间给容器, 节点上的资源也能反映出来被使用了这么多:
 
 ```
 root@localhost:~# eru-cli workload get e07fdc0ce44f332e502b3bf77b8f343fe6f5e0fa5f35b04d1f71042bf16a0026

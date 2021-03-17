@@ -4,7 +4,7 @@ Eru 目前实现了四种资源的调度, 每种资源又有 request 和 limit �
 
 ### 四种资源
 
-首先, 四种资源在使用前都需要注册到 [node](todo):
+首先, 四种资源在使用前都需要注册到 [node](https://book.eru.sh/conception/node):
 
 ```
 eru-cli node add --nodename zc \
@@ -25,7 +25,9 @@ CPU 分为绑核和不绑核两种请求, 在截止 v21.02.15 的 eru-core 里�
 
 可以看到绑核请求最终会反映到 `cpuset.cpus` 上, 而 cpu quota 会反映到 `cpu.cfs_quota_us`.
 
-绑核请求最终会绑定到那几个核上由 eru-core [scheduler](todo) 计算得出.
+绑核请求最终会绑定到那几个核上由 eru-core [scheduler](https://book.eru.sh/conception/scheduling) 计算得出.
+
+CPU 调度行为可以参考[Overall/Resource](https://book.eru.sh/overview/resource).
 
 #### Memory
 
@@ -38,7 +40,7 @@ CPU 分为绑核和不绑核两种请求, 在截止 v21.02.15 的 eru-core 里�
 Volume 分为普通调度挂载, 独占式调度挂载, 硬挂载.
 
 1. 普通调度挂载请求: `AUTO:/data:rw:100`
-a. `AUTO` 标识需要调度, 由 eru [scheduler](todo) 调度后从节点上可用 volume 选出一个
+a. `AUTO` 标识需要调度, 由 eru [scheduler](https://book.eru.sh/conception/scheduling) 调度后从节点上可用 volume 选出一个
 b. `/data` 是 Workload 内挂载目标
 c. `rw` 代表可读写, 另外还可指定 `ro` 只读
 d. `100` 代表可写入字节限制 100 字节

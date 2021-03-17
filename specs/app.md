@@ -20,7 +20,7 @@ entrypoints:
     cmd: "run something"                    How to run this role, depend on image
     privileged: true/false                  Run in privileged mode
     dir: "path"                             Working dir
-    log: 
+    log:
       type: "journald/none"                 Same as docker log driver name
       config:                               Same as docker log driver config
         config1: "value"
@@ -56,7 +56,9 @@ entrypoints:
 volumes:                                    Mount local dir insider container/vm
   - path1:path2:ro
   - path3:path4
-  ...
+volumes_request:                            Mount local dir insider container/vm
+  - path1:path2:ro
+  - path3:path4
 labels:                                     Add labels to container/vm
   label1: "something"
   label2: "anything"

@@ -16,7 +16,7 @@ Eru 提供了基于 Calico 的 fixed-ip CNM 插件: https://github.com/projecter
 3. `calicoctl ipam show --ip ` 看到 IP 并没有归还给 calico ippool
 4. `docker start zc2` 重启后可以检查 IP 没有改变
 
-Barrel 的配置和安装请参考[文档](TODO).
+Barrel 的配置和安装请参考[文档](https://github.com/projecteru2/barrel/wiki/Install-As-Daemon).
 
 ### Yavirt
 

@@ -1,6 +1,6 @@
 # CPU 资源限制在 Runtime 的实现
 
-创建实例的时候, 经过 [调度](TODO) 之后, 最后 CPU 以两个属性传递给 [Runtime](TODO), 并且由具体的 runtime 去实现对 CPU 对分配和限制.
+创建实例的时候, 经过 [调度](https://book.eru.sh/conception/scheduling) 之后, 最后 CPU 以两个属性传递给 [Runtime](https://book.eru.sh/conception/runtime), 并且由具体的 runtime 去实现对 CPU 对分配和限制.
 
 传递给 Runtime 的两个 CPU 属性是 `CPUQuota`(int) 和 `CPUMap`(map[string]int), 前者代表一个实例最多使用几个核, 后者代表核的绑定情况.
 

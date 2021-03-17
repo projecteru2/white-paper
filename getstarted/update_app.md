@@ -4,6 +4,8 @@
 
 ### 更新资源
 
+资源可以参考文档: [资源](https://book.eru.sh/conception/resource)
+
 比如拿 cpu 来说, 从单核扩容到三核, 再缩减到两核, 再扩展到无限制, 可以用以下命令:
 
 ```
@@ -73,4 +75,4 @@ eru-cli workload deploy --pod testpod --image bash --entry zc --count 2 ./spec.y
 
 就可以部署第二个容器, 不过依然在同一节点上.
 
-在多节点的情况下 `deploy-strategy` 和 `nodes-limit` 有很重要的作用, 详见 [strategy](TODO).
+在多节点的情况下 `deploy-strategy` 和 `nodes-limit` 有很重要的作用, 详见 [编排](https://book.eru.sh/conception/scheduling).
