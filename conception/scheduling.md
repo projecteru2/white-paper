@@ -1,6 +1,6 @@
 # Scheduling
 
-请先参考 [资源](todo)
+请先参考 [资源](https://book.eru.sh/conception/resource)
 
 eru-core 把 Scheduling 分为“容量计算”和“编排”两个步骤.
 
