@@ -11,7 +11,7 @@
     * [Features](overview/features.md)
     * [Architect](overview/arch.md)
     * [Resource](overview/resource.md)
-    * [HealthCheck](overview/healthcheck.md)
+    * [HealthCheck](conception/healthcheck.md)
     * [Component](overview/component.md)
 * [Conception](conception/README.md)
     * [Pod](conception/pod.md)

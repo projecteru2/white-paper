@@ -49,4 +49,13 @@
 > A docker daemon wrapper
 
   - Docker wrapper for fixed IP feature
-  - 原生区分了 stop/remove 行为 
+  - 原生区分了 stop/remove 行为
+
+### 8. Yavirt
+
+> Yet another virt daemon
+
+  - 基于 QEMU-KVM 的虚拟机 runtime
+  - 支持多种行为操作, 比如 execute command, remote console
+  - 支持 Calico 网络的集成
+  - 支持镜像一键式打包上传到 VM Image Hub

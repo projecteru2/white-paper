@@ -18,6 +18,8 @@ Workload 拥有全局唯一到 ID, 通过 ID 可以完成一系列通用操作:
 8. Copy: 从实例里拷贝指定文件到客户端
 9. Send: 从客户端拷贝指定文件到实例内部
 
+注意 Realloc 是实时重分配, 容器进程不会被停止; 不过 Yavirt 虚拟机暂不支持实时重分配.
+
 ### 生命周期
 
 Eru Workload 可以在创建时指定 `after_start` 和 `before_stop` hook, 可以用来完成一系列应用初始化和清理的工作. 详见 [spec](https://book.eru.sh/specs/app).
@@ -32,3 +34,10 @@ Workload 本身的状态由节点上的 eru-agent 监控和上报给 eru-core, �
 4. extension: 其他 tags
 
 eru-core 提供了一个接口 `WorkloadStatusStream` 供第三方监听 Workload 的生命状态, 一旦有状态变化会推送消息给监听方, 从而完成 failover 等机制.
+
+
+### 健康检查
+
+健康检查是由 [spec](https://book.eru.sh/specs/spp) 中的 `healthcheck` 部分定义的.
+
+详细的信息参见 [健康检查](https://book.eru.sh/conception/healthcheck).
