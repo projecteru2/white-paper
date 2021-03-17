@@ -115,3 +115,5 @@ ReplicaSet 的功能可以通过一个更上层的服务, 部署服务之后, �
 通过这个机制可以实现高层的 PaaS 服务, 包括灾难恢复, 自动化迁移, 等上层业务系统.
 
 可以参考 [Workload](https://book.eru.sh/conception/workload) 的文档.
+
+健康检查的详细信息在[这里](https://book.eru.sh/conception/healthcheck)

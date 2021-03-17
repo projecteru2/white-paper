@@ -24,3 +24,7 @@ Docker 和 Systemd Runtime 都是进程级的 Runtime, 对于这种 Runtime 我�
 2. 请求二 cpu=1, bind=true, 最终 cpuset.cpus=0, cpu.shares=1024 (1024 是默认 share, 相当于没有修改); 随后 share pool 被调整为 1-7, 请求一创建的进程的 cpuset.cpus 被调整为 1-7.
 3. 请求三 cpu=1.2, bind=true, 最终 cpuset.cpus=1,3, cpu.shares=20; 之后请求 1 创建的进程 cpuset.cpus 再次被调整为 2,4-7.
 4. 请求四 cpu=1.2, bind=false, 最终 cpuset.cpus=2,4-7, cpu.cfs_quota_us=120000
+
+### NUMA 支持
+
+在 CPU Core 分配模式下，如果 Node 注册的时候包含 NUMA 信息，CPU 分配策略会尽可能的使得目标使用同一个 NUMA Node 上的 CPU。如果所需容器数超过 NUMA Node 能分配的数量，则会自动跨 NUMA Node 计算还能部署多少容器，尽可能的满足部署需求。比如一个 NUMA Node 包含 2 核 1G 内存，有 2 个 NUMA Node。这时候需要 1 核 600M 的容器，则会计算出最多能部署 3 个。分别是 Node 0 和 1 各自 1 个，跨 Node 1 个。
