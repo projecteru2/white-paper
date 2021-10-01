@@ -6,19 +6,30 @@ Agent Config 是用来决定 Agent 行为的配置，一般会保存在 ```/etc/
 
 ```
 pid: /tmp/agent.pid                              pid path
-core: 127.0.0.1:5001                             Core 的 API 地址
-health_check_interval: 5                optional healthcheck 间隔
-health_check_timeout: 10                optional healthcheck 超时判定
-health_check_cache_ttl: 60              optional healthcheck 结果缓存时间
+store: grpc                             optional store 的类型，默认为 grpc，即 eru-core 的 grpc 服务
+runtime: docker                         optional runtime 类型，默认为 docker
+kv: etcd                                optional kv 类型，默认为 ETCD
+
+core:                                            Core 的 API 地址
+  - 127.0.0.1:5001                               可以配置多个地址
+
+healthcheck:                                     Health Check 配置
+  interval: 120                         optional Health Check 间隔
+  timeout: 10                           optional Health Check 超时判定
+  cache_ttl: 300                        optional 本地缓存的过期时间，仅当 enable_selfmon 为 true 时生效
+  enable_selfmon: false                 optional 集群里是否启动了 selfmon
 
 auth:                                   optional Core API Basic auth
   username: username
   password: password
 
-hostname:                               optional Specify hostname
-
 docker:                                          Docker 配置
-  endpoint: unix:///var/run/docker.sock          Docker sockfile 地址
+  endpoint: unix:///var/run/docker.sock          Docker url，支持 unix socket file 地址和 tcp 地址的形式
+
+yavirt:                                          Yavirt 配置
+  endpoint: grpc://127.0.0.1:9697                Yavirt url，支持 grpc 地址和 http 地址
+  skip_guest_report_regexps:                     ID 符合任意正则表达式的 VM 将不会被检查
+    - .+002
 
 metrics:                                         Metrics 配置
   step: 30                                       发送间隔
@@ -32,6 +43,13 @@ log:                                             日志选项
   forwards:
     - tcp://127.0.0.1:5144              optional 日志远端, 支持 tcp、udp、journal 和特殊的 __discard__
   stdout: False                                  是否把容器日志打到 agent 自身日志流里面
+
+ha_keepalive_interval: 16s              optional selfmon 发送心跳的时间间隔
+
+etcd:                                            ETCD 配置，仅当此 agent 以 selfmon 模式运行时生效
+  machines:                                      ETCD 服务器地址
+    - 127.0.0.1:2379
+  prefix: /agent-selfmon                         Key的前缀
 ```
 
 Agent 在监听到隶属 Eru 的容器启动后，会把 stdout/stderr 的日志 forward 到配置的远端，同时开始监听 metrics。
